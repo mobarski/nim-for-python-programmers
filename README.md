@@ -1,6 +1,6 @@
 # Nim for Python Programmers
 
-Collection of code snippets that compare Nim and Python.
+Collection of code snippets that facilitate the transition from Python to Nim.
 
 
 
@@ -53,7 +53,7 @@ Collection of code snippets that compare Nim and Python.
 | `from collections import Counter` | `import std/tables`                                          |
 | `x = Counter("abbaca")`           | `var x = "abbaca".to_count_table`                            |
 | `x = Counter()`                   | `var x = init_count_table[string]()`                         |
-| `x["z"] += 9`                     | `x.inc("z",9)` ==# doesn't work with "to_count_table" !!! why ???== |
+| `x["z"] += 9`                     | `x.inc("z",9)` ==doesn't work with "to_count_table" !!! why ???== |
 | `for k,v in x.most_common():`     | TODO                                                         |
 
 
@@ -83,13 +83,13 @@ Collection of code snippets that compare Nim and Python.
 
 ## pickle → marshal
 
-| Python                | Nim                                                    |
-| --------------------- | ------------------------------------------------------ |
-| `import pickle`       | `import std/marshal`                                   |
-| `y = pickle.dumps(x)` | `let y = $$x`                                          |
-| `z = pickle.loads(y)` | `let z = to[seq[int]](y)` ==# requires explicit type== |
-| TODO pickle.load      | TODO                                                   |
-| TODO pickle.dump      | TODO                                                   |
+| Python                | Nim                                                  |
+| --------------------- | ---------------------------------------------------- |
+| `import pickle`       | `import std/marshal`                                 |
+| `y = pickle.dumps(x)` | `let y = $$x`                                        |
+| `z = pickle.loads(y)` | `let z = to[seq[int]](y)` ==requires explicit type== |
+| TODO pickle.load      | TODO                                                 |
+| TODO pickle.dump      | TODO                                                 |
 
 
 
