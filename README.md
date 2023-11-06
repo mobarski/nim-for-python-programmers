@@ -1,6 +1,8 @@
 # Nim for Python Programmers
 
-Collection of code snippets that facilitate the transition from Python to Nim.
+An assortment of code snippets designed to ease the transition from Python to Nim.
+
+While similar in objective to the [Nim for Python Programmers guide](https://github.com/nim-lang/Nim/wiki/Nim-for-Python-Programmers) on the Nim language's official GitHub page, this collection focuses more on individual lines of code and their Nim equivalents.
 
 
 
@@ -23,13 +25,16 @@ Collection of code snippets that facilitate the transition from Python to Nim.
 
 ## list → seq
 
-| Python                | Nim                        |
-| --------------------- | -------------------------- |
-| `x = ["a", "b", "c"]` | `var x = @["a", "b", "c"]` |
-| `len(x)`              | `x.len`                    |
-| `if "a" in x:`        | `if "a" in x:`             |
-| `x.append("z")`       | `x.add("z")`               |
-| `x.insert(0,"!")`     | `x.insert("!",0)`          |
+| Python                     | Nim                        |
+| -------------------------- | -------------------------- |
+| `x = ["a", "b", "c"]`      | `var x = @["a", "b", "c"]` |
+| `len(x)`                   | `x.len`                    |
+| `for i,v in enumerate(x):` | `for i,v in x:`            |
+| `if "a" in x:`             | `if "a" in x:`             |
+| `x.append("z")`            | `x.add("z")`               |
+| `x.insert(0,"!")`          | `x.insert("!",0)`          |
+| `x[-1]`                    | `x[^1]`                    |
+| `x[2:4]`                   | `x[2..3]`                  |
 
 
 
@@ -58,7 +63,7 @@ Collection of code snippets that facilitate the transition from Python to Nim.
 
 
 
-## sort → sort
+## sort
 
 | Python                        | Nim                    |
 | ----------------------------- | ---------------------- |
@@ -76,8 +81,21 @@ Collection of code snippets that facilitate the transition from Python to Nim.
 | Python                    | Nim                       |
 | ------------------------- | ------------------------- |
 | `for line in open(path):` | `for line in lines path:` |
+| f  = open(path, "w")      | TODO                      |
 |                           |                           |
-|                           |                           |
+
+
+
+## f-string → strformat
+
+| Python             | Nim                    |
+| ------------------ | ---------------------- |
+|                    | `import std/strformat` |
+| `f"{k}"`           | `"{k}".fmt`            |
+| `f"{v:0.3f}"`      | `"{v:0.3f}".fmt`       |
+| `f"{100*x:0.1f}%"` | ` "{100*x:0.1f}%".fmt` |
+
+
 
 
 
@@ -93,13 +111,26 @@ Collection of code snippets that facilitate the transition from Python to Nim.
 
 
 
-## os.env
+## json
+
+| Python          | Nim               |
+| --------------- | ----------------- |
+| `import json`   | `import std/json` |
+| `json.dumps(x)` | TODO              |
+| `json.loads(x)` | `parse_json(x)`   |
+
+
+
+## os.environ
 
 | Python                           | Nim                          |
 | -------------------------------- | ---------------------------- |
 | `import os`                      | `import std/os`              |
 | `for k,v in os.environ.items():` | `for k,v in os.env_pairs():` |
 | `os.getenv("PATH")`              | `os.get_env("PATH")`         |
+| `os.environ["x"] = "abc"`        | `os.put_env("x", "abc")`     |
+
+
 
 ## sys.argv
 
@@ -107,5 +138,14 @@ Collection of code snippets that facilitate the transition from Python to Nim.
 | ------------ | -------------------------- |
 | `import sys` | `import os`                |
 | `sys.argv`   | `os.command_line_params()` |
-|              |                            |
+
+
+
+## multiprocessing -- TODO
+
+| Python | Nim  |
+| ------ | ---- |
+|        |      |
+|        |      |
+|        |      |
 
