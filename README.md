@@ -4,7 +4,7 @@ An assortment of code snippets designed to ease the transition from Python to Ni
 
 While similar in objective to the [Nim for Python Programmers guide](https://github.com/nim-lang/Nim/wiki/Nim-for-Python-Programmers) on the Nim language's official GitHub page, this collection focuses more on individual lines of code and their Nim equivalents.
 
-
+For full program examples consider looking at the [Nim section of Rosetta Code](https://rosettacode.org/wiki/Category:Nim).
 
 ## dict → Table
 
