@@ -153,6 +153,15 @@ For full program examples consider looking at the [Nim section of Rosetta Code](
 
 
 
+## vars → fields
+
+| Python             | Nim               |
+| ------------------ | ----------------- |
+| `vars(obj)`        | `obj.field_pairs` |
+| `vars(obj).keys()` | `obj.fields`      |
+
+
+
 ## multiprocessing -- TODO
 
 | Python | Nim  |
