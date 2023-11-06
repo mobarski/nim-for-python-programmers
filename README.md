@@ -51,6 +51,18 @@ While similar in objective to the [Nim for Python Programmers guide](https://git
 
 
 
+## namedtuple → tuple
+
+| Python                                   | Nim                                                 |
+| ---------------------------------------- | --------------------------------------------------- |
+| `from collections import namedtuple`     |                                                     |
+| `Point = namedtuple('Point', ['x','y'])` | `type Point = tuple[x,y:int]`                       |
+| `p = Point(1, y=2)`                      | `let p : Point = (1, 2)`                            |
+|                                          | `let p = (x:1, y:2)`<br />==anonymous named tuple== |
+| `p.x + p[1]`                             | `p.x + p[1]`                                        |
+
+
+
 ## Counter → CountTable
 
 | Python                            | Nim                                                          |
